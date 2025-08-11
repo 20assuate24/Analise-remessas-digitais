@@ -24,3 +24,31 @@ Queremos ter um desempenho melhor com clientes novos ou recorrentes?
 Optimização de Receita: 
 O facto de sermos mais baratos significa que estamos a maximizar a nossa receita? 
 Será que imaginamos aumentar um pouco a taxa em corredores onde a nossa vantagem é maior sem perder clientes?
+
+Análise por Cliente
+Comportamento Variável: A tabela mostra que o número de transações ( transacoes_totais) e o volume total enviado ( valor_enviado_total) variam bastante entre os clientes. Por exemplo, o cliente C1fez 4 transações, enquanto o cliente C100fez apenas 2. Isso confirma a nossa hipótese de que o comportamento dos clientes não é uniforme.
+
+Taxas Diferentes: O mais importante é que a taxa média ( taxa_media) também varia significativamente de cliente para cliente. A taxas médias varia de 0.012850 até 0.042500. Isso indica que nossa estratégia de preços não é a mesma para todos, ou que pode ser uma oportunidade para melhoria. Ora vejamos:
+
+---Análise por tipo de Cliente----
+            transacoes_totais  valor_enviado_total  taxa_media
+ID_cliente                                                    
+C1                          4              1927.82    0.024100
+C10                         4              1999.12    0.028925
+C100                        2               842.71    0.022200
+C1000                       2               586.74    0.012850
+C1001                       3              1764.30    0.024800
+...                       ...                  ...         ...
+C994                        2               806.81    0.042500
+C995                        2               830.60    0.026700
+C996                        3              1751.42    0.028800
+C998                        3              1887.96    0.030567
+C999                        3              1765.83    0.025833
+
+Análise de Preços para Clientes Recorrentes vs.
+Preços Uniformes: Os gráficos de barras mostram que a taxa de serviço média que cobramos para clientes recorrentes ( Sim) é praticamente idêntica à taxa que cobramos para novos clientes ( Não). Ambas as barras estão na mesma altura, em torno de 0,025%.
+Portanto: A nossa estratégia de preços atual não faz diferença entre clientes novos e recorrentes. Não usaremos o preço como uma ferramenta para atrair novos clientes (com uma taxa mais baixa, por exemplo) ou para recompensar a fidelidade dos clientes recorrentes.
+
+Análise de Volume e Receita
+Agora que sabemos que a taxa de preço é uniforme, o próximo passo é entender o impacto disso no volume de transações e na receita. Se não vamos usar o preço para diferenciar clientes, qual é o impacto do nosso volume?
+Vamos calcular e visualizar a receita total, a margem e o volume de transações por corredor.
