@@ -7,11 +7,15 @@ import seaborn as sns
 df_merged = pd.read_csv('data/processed/merged_data.csv')
 df_merged['data'] = pd.to_datetime(df_merged['data'])
 
-# --- Passo 1: Criar a variável de diferença de preço ---
+# Criar a receita bruta 
+# A receita é o valor enviado multiplicado pela nossa taxa (fee_percent)
+df_merged['receita_bruta'] = df_merged['valor_enviado'] * df_merged['fee_percent']
+
+# Criar a variável de diferença de preço
 # Vamos calcular a diferença de taxa (a nossa taxa menos a do concorrente)
 df_merged['diferenca_taxa'] = df_merged['fee_percent'] - df_merged['competitor_fee_percent']
 
-# --- Passo 2: Agregar os dados para o modelo ---
+# Agregar os dados para o modelo
 # O modelo de regressão precisa de prever o volume de transações por período,
 # então vamos agrupar os dados por data e corredor.
 df_modelo = df_merged.groupby(['data', 'corredor']).agg(

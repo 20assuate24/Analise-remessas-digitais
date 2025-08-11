@@ -1,13 +1,13 @@
 Relatório de Conclusões
-A primeira análise focou na comparação das nossas taxas de serviço (NALA) com as taxas médias dos concorrentes nos três corredores de remessas.
+A primeira análise focou na comparação das nossas taxas de serviço (NALAsy) com as taxas médias dos concorrentes nos três corredores de remessas.
 
 Dados Encontrados:
-Corredor EUA -> Brasil: A nossa taxa média de serviço é de aproximadamente 2,50% , enquanto a taxa média dos concorrentes é de 2,64% . A NALA é mais competitiva neste corredor.
+Corredor EUA -> Brasil: A nossa taxa média de serviço é de aproximadamente 2,50% , enquanto a taxa média dos concorrentes é de 2,64% . A NALAsy é mais competitiva neste corredor.
 Corredor Portugal -> Moçambique: A nossa taxa média é de aproximadamente 3,49% , enquanto a dos concorrentes é de 3,63% . Neste corredor, também somos mais competitivos.
 Corredor Reino Unido -> Quénia: A nossa taxa média é de aproximadamente 1,51% , e a dos concorrentes é de 1,69% . A nossa taxa é a mais baixa dos três corredores e ainda é mais competitiva que a do mercado.
 
 Conclusão Inicial:
-A análise inicial sugere que a NALA está a operar com taxas de serviço consistentemente mais baixas que a concorrência em todos os três corredores. A suspeita da diretoria de que os preços poderiam ser muito altos em alguns corredores não parece ser confirmada pelos dados médios. Este é um ótimo começo! Agora, vamos avançar para o próximo passo, que é visualizar estes dados para uma apresentação mais clara.
+A análise inicial sugere que a NALAsy está a operar com taxas de serviço consistentemente mais baixas que a concorrência em todos os três corredores. A suspeita da diretoria de que os preços poderiam ser muito altos em alguns corredores não parece ser confirmada pelos dados médios. Este é um ótimo começo! Agora, vamos avançar para o próximo passo, que é visualizar estes dados para uma apresentação mais clara.
 Como mostram os resultados abaixo:
                  corredor  fee_percent  competitor_fee_percent
 0           EUA -> Brasil     0.024977                0.026448
@@ -15,7 +15,7 @@ Como mostram os resultados abaixo:
 2   Reino Unido -> Quénia     0.015053                0.016943
 
 Quanto as Comparações de Preços, temos:
-Vantagem Competitiva: Os gráficos demonstram claramente que a NALA tem uma vantagem de preço em todos os três corredores. A nossa taxa média de serviço é consistentemente mais baixa do que a dos concorrentes. Variabilidade por Corredor: O corredor Portugal -> Moçambiquetem as taxas mais altas para ambos, NALA e concorrentes. O corredor Reino Unido -> Quéniatem as taxas mais baixas.
+Vantagem Competitiva: Os gráficos demonstram claramente que a NALAsy tem uma vantagem de preço em todos os três corredores. A nossa taxa média de serviço é consistentemente mais baixa do que a dos concorrentes. Variabilidade por Corredor: O corredor Portugal -> Moçambiquetem as taxas mais altas para ambos, NALAsy e concorrentes. O corredor Reino Unido -> Quéniatem as taxas mais baixas.
 
 Perguntas e Hipóteses (Visão Estratégica):
 Impacto no Cliente: 
@@ -76,13 +76,12 @@ Podemos criar um gráfico de linhas que mostre a evolução de nossa taxa de ser
 Análise de Preços no Corredor Crítico
 O que o gráfico (evoluçãodas taxas de serviço: Reino Unido -> Quénia) de evolução das taxas nos diz:
 Vantagem de Preço Constante: O gráfico mostra de forma clara e consistente que a nossa taxa de serviço (linha azul) é quase sempre inferior aos nossos concorrentes (linha laranja) no corredor Reino Unido -> Quénia.
-
 Preços Alinhados: As nossas taxas seguem a mesma tendência que as dos concorrentes, mas num patamar inferior. Isso confirma que estamos operando com uma estratégia de preços competitiva, mas muito agressiva neste corredor.
 
 Conclusão Final do Projeto:
-Chegamos a uma conclusão abrangente que responde à pergunta inicial da diretoria. A nossa suspeita de que a NALA poderia estar a cobrar muito caro não se confirma. Na verdade, a nossa principal descoberta é o oposto:
-Vantagem Competitiva: A NALA tem uma vantagem de preço em todos os corredores, com taxas médias mais baixas que a concorrência.
-Oportunidade de Otimização: O corredor Reino Unido -> Quénia, apesar de ter um volume de transações elevado, é o que gera uma receita menor devido a taxas de serviço consistentemente muito baixas.
+Chegamos a uma conclusão abrangente que responde à pergunta inicial da diretoria. A nossa suspeita de que a NALAsy poderia estar a cobrar muito caro não se confirma. Na verdade, a nossa principal descoberta é o oposto:
+Vantagem Competitiva: A NALAsy tem uma vantagem de preço em todos os corredores, com taxas médias mais baixas que a concorrência.
+Oportunidade de Optimização: O corredor Reino Unido -> Quénia, apesar de ter um volume de transações elevado, é o que gera uma receita menor devido a taxas de serviço consistentemente muito baixas.
    Estratégia Uniforme: A nossa estratégia de preços não diferencia entre clientes novos e recorrentes
 
 Fase 3: Modelagem de Sensibilidade a Preços (Demonstra Base Sólida em Ciência de Dados)
@@ -90,6 +89,63 @@ Fase 3: Modelagem de Sensibilidade a Preços (Demonstra Base Sólida em Ciência
 1.	Objetivo: O objetivo do modelo é prever o volume de transações ( num_transactions) com base em variáveis como fee_percent, a diferença de preço em relação aos concorrentes, e se o cliente é novo ou recorrente.
 2.	Modelo: Escolha um modelo de regressão (como RandomForestRegressorou LinearRegressiondo scikit-learn) para modelar a sensibilidade dos clientes aos preços.
 3.	Conclusão: Use o modelo para responder a perguntas como: "Se reduzirmos a nossa taxa em 0,5% no Corredor C, qual o impacto estimado no volume de transações e na receita total?"
+
+Interpretação dos Resultados do Modelo
+1. Erro Quadrático Médio (MSE): 0,13
+Este valor representa a precisão média da variação do modelo. Um MSE de 0,13 é relativamente baixo, o que é um bom sinal. Significa que a variação do nosso modelo está, em média, bastante próxima dos valores de volume de transações reais.
+
+2. R-quadrado (R²): 0,34
+Este é o indicador mais importante para nós. HumR2 de 0,34 significa que nosso modelo consegue explicar 34% da variação no volume de transações.
+Isto é um bom ponto de partida. Confirma-se que as variáveis de preço (a nossa taxa e a dos concorrentes) são fatores relevantes para prever o volume de transações. No entanto, o facto de não ser um valor mais alto também sugere que existem outros factores importantes (não incluídos no modelo, como marketing, sazonalidade, etc.) que afectam o volume.
+
+Conclusão Final e Simulação
+Nosso modelo é robusto o suficiente para nos dar uma indicação de como pequenas mudanças de preço podem impactar a procura. Agora, vamos usar o modelo para responder à pergunta-chave do diretório: "Se alterarmos a nossa taxa no corredor Reino Unido -> Quênia, qual o impacto estimado no volume e na receita?"
+
+Conclusões Finais e Recomendação Estratégica
+Sua análise e modelagem de dados nos permitiram ir desde uma simples observação de dados até uma recomendação de uma estratégia de negócio.
+
+1. O Diagnóstico (Análise Exploratória):
+A NALA tem uma vantagem de preço em todos os corredores, cobrando consistentemente menos que os concorrentes. Apesar de ter um volume de transações semelhante aos outros, o corredor Reino Unido -> Quéniaé o que gera a menor receita. A nossa estratégia de preços não faz diferença entre clientes novos e recorrentes.
+
+2. A Resposta (Modelagem Preditiva):
+1. O modelo preditivo confirma que a taxa de serviço é um fator importante para o volume de transações (R2=0,34).
+2. A simulação é a prova final. Um aumento de 0,5% na taxa de serviço no corredor Reino Unido -> Quénia:
+3. Reduza a diferença de preço para a concorrência, mas ainda nos mantém competitivos.
+
+Embora o modelo preveja um aumento ligeiro no volume de transações (de 1.34 para 1.34), o mais importante é o aumento significativo na receita bruta prevista , de 14.23.
+
+Recomendação Estratégica para a Diretoria da Empresa NALAsy:
+Com base na análise abrangente, a recomendação para a diretoria é clara:
+"A Empresa NALAsy deve implementar uma estratégia de optimização de preços no corredor Reino Unido -> Quénia."
+
+Ajuste de Preços: Sugere-se testar um aumento gradual da taxa de serviço neste corredor, com o objetivo de aumentar a receita sem perder uma fatia significativa do volume de transações. O modelo indica que um aumento de 0,5% é um bom ponto de partida.
+
+Programa de Fidelização: Recomendamos explorar a implementação de taxas diferenciadas para clientes recorrentes nos corredores mais lucrativos ( Portugal -> Moçambiquee EUA -> Brasil) para aumentar a fidelidade e a receita a longo prazo.
+
+
+##----------------------Resultados finais -------------------- ##
+Análise da Simulação do Experimento A/B
+Volume de Transações:
+
+O Grupo Testeteve um volume de transações maior (1719) do que o Grupo de Controle (1678). Isso parece apoiar a nossa hipótese inicial.
+
+##------ Receita Bruta Total:
+Este é o resultado mais crítico. A receita do Grupo de Teste foi significativamente menor (22.556,16) do que a do Grupo de Controle(30.191,71).
+
+#---- Teste de Significância Estatística (teste t):
+Ou valor pfoi de 0,1289 . Como este valor é maior do que nossos limites de significância padrão (geralmente 0,05), a diferença no volume de transações entre os dois grupos não é estatisticamente significativa .
+
+## ------ Conclusão Final e Recomendação Estratégica -------
+
+A simulação demonstra que a nossa hipótese inicial de que a redução dos preços levaria a um aumento da receita foi refutada . Embora o volume tenha aumentado, essa mudança não foi estatisticamente significativa e, mais importante, o impacto na receita foi negativo.
+
+A sua análise completa, desde a fase exploratória até a simulação de experimentos, nos dá as seguintes recomendações:
+
+Não Implementar a Redução de Preços: A NALA não deve reduzir a taxa de serviço para clientes novos no corredor Portugal -> Moçambique. Essa ação levaria a uma perda substancial de receita.
+
+Focar na Otimização: O foco da NALA deve ser na otimização de preços no corredor Reino Unido -> Quénia, onde nossa análise anterior mostrou uma oportunidade de aumentar as taxas para aumentar a receita.
+
+Explorar outras estratégias: Como a taxa de preço não é o único fator que impulsiona o volume de transações, a NALA deve explorar outras iniciativas (por exemplo, marketing direcionado, ofertas de indicação) para aumentar o volume de transações sem comprometer a receita.
 
 
 
