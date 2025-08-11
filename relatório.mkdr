@@ -52,3 +52,44 @@ Portanto: A nossa estratégia de preços atual não faz diferença entre cliente
 Análise de Volume e Receita
 Agora que sabemos que a taxa de preço é uniforme, o próximo passo é entender o impacto disso no volume de transações e na receita. Se não vamos usar o preço para diferenciar clientes, qual é o impacto do nosso volume?
 Vamos calcular e visualizar a receita total, a margem e o volume de transações por corredor.
+Aqui estao os resultados:
+Análise de Volume e Receita
+Com base nos resultados atualizados, podemos tirar as seguintes conclusões estratégicas:
+
+Líder de Receita: O corredor Portugal -> Moçambiqueé o mais valioso para a empresa. Ele não tem apenas o maior volume de transações, mas também gera a maior receita bruta, superando os outros corredores em mais de 40%.
+
+Consistência de Volume: O volume de transações é relativamente semelhante nos três corredores, todos com pouco mais de 3.000 transações.
+
+Corredor Problemático: O corredor Reino Unido -> Quéniaé o principal ponto de atenção. Apesar de ter um volume de transações repassadas a outros, sua receita bruta é significativamente mais baixa. Isso sugere que nossa estratégia de preços neste corredor pode ser muito agressiva (com taxas muito baixas), ou que prejudica a receita.
+
+Esta análise valida a suspeita inicial de que nossa estratégia de preços pode estar desalinhada em alguns corredores. O próximo passo é focar no Reino Unido -> Quéniapara entender melhor a situação.
+--- Análise Completa por Corredor (Receita Bruta) ---
+                 corredor  volume_transacoes  receita_total  taxa_media
+0           EUA -> Brasil               3286   43147.559208    0.024977
+1  Portugal -> Moçambique               3397   61832.984903    0.034895
+2   Reino Unido -> Quénia               3317   26516.002637    0.015053
+
+Próximos Passos: Análise de Preços satisfatórios no Corredor Crítico
+Agora, vamos aprofundar nossa análise para entender a relação de preços no corredor Reino Unido -> Quéniaao longo do tempo.
+Podemos criar um gráfico de linhas que mostre a evolução de nossa taxa de serviço e do concorrente ao longo do tempo neste corredor, para ver se há alguma tendência que possa explicar a receita baixa.
+
+Análise de Preços no Corredor Crítico
+O que o gráfico (evoluçãodas taxas de serviço: Reino Unido -> Quénia) de evolução das taxas nos diz:
+Vantagem de Preço Constante: O gráfico mostra de forma clara e consistente que a nossa taxa de serviço (linha azul) é quase sempre inferior aos nossos concorrentes (linha laranja) no corredor Reino Unido -> Quénia.
+
+Preços Alinhados: As nossas taxas seguem a mesma tendência que as dos concorrentes, mas num patamar inferior. Isso confirma que estamos operando com uma estratégia de preços competitiva, mas muito agressiva neste corredor.
+
+Conclusão Final do Projeto:
+Chegamos a uma conclusão abrangente que responde à pergunta inicial da diretoria. A nossa suspeita de que a NALA poderia estar a cobrar muito caro não se confirma. Na verdade, a nossa principal descoberta é o oposto:
+Vantagem Competitiva: A NALA tem uma vantagem de preço em todos os corredores, com taxas médias mais baixas que a concorrência.
+Oportunidade de Otimização: O corredor Reino Unido -> Quénia, apesar de ter um volume de transações elevado, é o que gera uma receita menor devido a taxas de serviço consistentemente muito baixas.
+   Estratégia Uniforme: A nossa estratégia de preços não diferencia entre clientes novos e recorrentes
+
+Fase 3: Modelagem de Sensibilidade a Preços (Demonstra Base Sólida em Ciência de Dados)
+•	O que fazer: Construa um modelo preditivo para entender como a mudança de preço afeta a demanda.
+1.	Objetivo: O objetivo do modelo é prever o volume de transações ( num_transactions) com base em variáveis como fee_percent, a diferença de preço em relação aos concorrentes, e se o cliente é novo ou recorrente.
+2.	Modelo: Escolha um modelo de regressão (como RandomForestRegressorou LinearRegressiondo scikit-learn) para modelar a sensibilidade dos clientes aos preços.
+3.	Conclusão: Use o modelo para responder a perguntas como: "Se reduzirmos a nossa taxa em 0,5% no Corredor C, qual o impacto estimado no volume de transações e na receita total?"
+
+
+
