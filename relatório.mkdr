@@ -1,0 +1,26 @@
+Relatório de Conclusões
+A primeira análise focou na comparação das nossas taxas de serviço (NALA) com as taxas médias dos concorrentes nos três corredores de remessas.
+
+Dados Encontrados:
+Corredor EUA -> Brasil: A nossa taxa média de serviço é de aproximadamente 2,50% , enquanto a taxa média dos concorrentes é de 2,64% . A NALA é mais competitiva neste corredor.
+Corredor Portugal -> Moçambique: A nossa taxa média é de aproximadamente 3,49% , enquanto a dos concorrentes é de 3,63% . Neste corredor, também somos mais competitivos.
+Corredor Reino Unido -> Quénia: A nossa taxa média é de aproximadamente 1,51% , e a dos concorrentes é de 1,69% . A nossa taxa é a mais baixa dos três corredores e ainda é mais competitiva que a do mercado.
+
+Conclusão Inicial:
+A análise inicial sugere que a NALA está a operar com taxas de serviço consistentemente mais baixas que a concorrência em todos os três corredores. A suspeita da diretoria de que os preços poderiam ser muito altos em alguns corredores não parece ser confirmada pelos dados médios. Este é um ótimo começo! Agora, vamos avançar para o próximo passo, que é visualizar estes dados para uma apresentação mais clara.
+Como mostram os resultados abaixo:
+                 corredor  fee_percent  competitor_fee_percent
+0           EUA -> Brasil     0.024977                0.026448
+1  Portugal -> Moçambique     0.034895                0.036265
+2   Reino Unido -> Quénia     0.015053                0.016943
+
+Quanto as Comparações de Preços, temos:
+Vantagem Competitiva: Os gráficos demonstram claramente que a NALA tem uma vantagem de preço em todos os três corredores. A nossa taxa média de serviço é consistentemente mais baixa do que a dos concorrentes. Variabilidade por Corredor: O corredor Portugal -> Moçambiquetem as taxas mais altas para ambos, NALA e concorrentes. O corredor Reino Unido -> Quéniatem as taxas mais baixas.
+
+Perguntas e Hipóteses (Visão Estratégica):
+Impacto no Cliente: 
+Nossas taxas mais baixas estão a atrair mais clientes? 
+Queremos ter um desempenho melhor com clientes novos ou recorrentes?
+Optimização de Receita: 
+O facto de sermos mais baratos significa que estamos a maximizar a nossa receita? 
+Será que imaginamos aumentar um pouco a taxa em corredores onde a nossa vantagem é maior sem perder clientes?
