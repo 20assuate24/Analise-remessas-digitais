@@ -57,3 +57,5 @@ df_transactions.to_csv('transactions.csv', index=False)
 print("Arquivo transactions.csv criado com sucesso!")
 
 
+
+
